@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class DataService {
+  getSubscriptionTypes(): Observable<string[]> {
+    return of(['one', 'two', 'three']);
+  }
   constructor(private http: HttpClient) {}
 
   postUserSettingsForms(userStettings: UserSettings): Observable<any> {
@@ -14,7 +17,6 @@ export class DataService {
       'https://putsreq.com/HqcbDDOnZSPgQhaXvdEQ',
       userStettings
     );
-
     // return of(userStettings);
   }
 }

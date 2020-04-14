@@ -91,9 +91,9 @@
         id="subscriptionType"
         [(ngModel)]="userSettings.subscriptionType"
       >
-        <option>Monthly</option>
-        <option>Annual</option>
-        <option>Lifetime</option>
+        <option *ngFor="let type of subscriptionTypes | async">{{
+          type
+        }}</option>
       </select>
     </div>
 
